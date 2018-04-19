@@ -1,3 +1,4 @@
 export const API = {
-  books: ''
+  BOOKS: 'https://www.googleapis.com/books/v1/volumes?q=redux',
+  USERS: 'https://jsonplaceholder.typicode.com/users'
 };
