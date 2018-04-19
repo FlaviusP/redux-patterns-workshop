@@ -6,7 +6,7 @@ export const notificationsReducer = (notifications = [], action) => {
   switch (action.type) {
 
     case SET_NOTIFICATION:
-      return [...notifications, payload.data]
+      return [...notifications, payload.data];
 
     default:
       return notifications;

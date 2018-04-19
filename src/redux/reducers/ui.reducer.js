@@ -5,15 +5,13 @@ const initState = {
   loader: false
 };
 
-const loader = R.lensProp('loader');
-
 export const uiReducer = (ui =initState, action) => {
   const { payload } = action;
 
   switch (action.type) {
 
     case SET_LOADER:
-      return R.set(loader, payload.data, ui);
+      return {...ui, loading: payload };
 
     default:
       return ui;
