@@ -1,1 +1,2 @@
-export const BOOKS = '[books]';
+export const BOOKS = '[Books]';
+export const USERS = '[Users]';

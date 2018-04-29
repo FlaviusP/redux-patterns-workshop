@@ -5,7 +5,7 @@ import {API} from '../../constants/urls';
 import {createNotification} from "../../actions/notification.actions";
 import {BOOKS} from '../../constants/entities';
 
-export const booksMiddleware = ({getState, dispatch}) => (next) => (action) => {
+export const booksMiddleware = () => (next) => (action) => {
   next(action);
 
   switch (action.type) {
