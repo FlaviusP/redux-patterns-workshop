@@ -1,7 +1,8 @@
-import {BOOKS} from '../constants/entities';
+export const BOOKS = 'BOOKS';
 
 export const FETCH_BOOKS = `${BOOKS} Fetch`;
 export const SET_BOOKS   = `${BOOKS} Set`;
+export const UNDO = `UNDO`;
 
 export const fetchBooks = (query) => ({
     type: FETCH_BOOKS,
@@ -17,3 +18,8 @@ export const setBooks = (books, normalizeId) => ({
     meta: { normalizeId, entity: BOOKS }
   }
 });
+
+export const undoFetch = () => ({
+  type: UNDO,  
+});
+

@@ -12,7 +12,7 @@ export const uiReducer = (ui =initState, action) => {
 
   switch (true) {
 
-    case type.includes(SET_LOADER):
+    case type.includes(SET_LOADER):    
       return R.set(loader, payload.data, ui);
 
     default:

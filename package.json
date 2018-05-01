@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "private": false,
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "json-server": "^0.12.1",
     "normalize.css": "8.0.0",
     "ramda": "0.25.0",
