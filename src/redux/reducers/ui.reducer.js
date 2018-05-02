@@ -1,4 +1,3 @@
-import * as R from 'ramda';
 import {SET_LOADER} from "../actions/ui.actions";
 
 const initState = {
@@ -6,9 +5,9 @@ const initState = {
 };
 
 export const uiReducer = (ui =initState, action) => {
-  switch (action.type) {
+  switch (true) {
 
-    case SET_LOADER:
+    case action.type.includes(SET_LOADER):
       return {...ui, loading: action.payload };
 
     default:
