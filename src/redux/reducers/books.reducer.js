@@ -1,12 +1,10 @@
 import {SET_BOOKS} from "../actions/books.actions";
 
-export const booksReducer = (books = [], action) => {
-  const { payload } = action;
-
+export const booksReducer = (books = [], action) => {  
   switch (action.type) {
 
     case SET_BOOKS:
-      return payload.data.items;
+      return action.payload;
 
     default:
       return books;
