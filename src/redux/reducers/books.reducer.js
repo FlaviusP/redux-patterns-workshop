@@ -4,7 +4,7 @@ export const booksReducer = (books = [], action) => {
   switch (action.type) {
 
     case SET_BOOKS:
-      return payload;
+      return action.payload;
 
     default:
       return books;
