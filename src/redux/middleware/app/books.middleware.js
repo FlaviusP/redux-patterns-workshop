@@ -3,6 +3,7 @@ import {API_ERROR, API_SUCCESS, apiRequest} from "../../actions/api.actions";
 import {setLoader} from "../../actions/ui.actions";
 import {BOOKS} from '../../actions/books.actions';
 import {setNotification} from "../../actions/notification.actions";
+import {API} from "../../constants/constants";
 
 export const booksMiddleware = () => (next) => (action) => {
   next(action);
@@ -10,7 +11,7 @@ export const booksMiddleware = () => (next) => (action) => {
   switch (action.type) {
 
     case FETCH_BOOKS:
-      next(apiRequest(null, 'GET', '/books', BOOKS));
+      next(apiRequest(null, 'GET', API.BOOKS, BOOKS));
       next(setLoader(true, BOOKS));
       break;
 
