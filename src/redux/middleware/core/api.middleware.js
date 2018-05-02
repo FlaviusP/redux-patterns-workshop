@@ -5,12 +5,12 @@ export const apiMiddleware = ({ dispatch }) => (next) => (action) => {
   next(action);
 
   if(action.type.includes(API_REQUEST)) {
-    const { meta } = action.payload;
+    const { url, method, entity } = action.meta ;
 
-    fetch(meta.url, { method: meta.method })
+    fetch(url, { method })
       .then( response => response.json())
-      .then( data => dispatch(apiSuccess(data, meta.entity)))
-      .catch( error => dispatch(apiError(error, meta.entity)))
+      .then( data => dispatch(apiSuccess(data, entity)))
+      .catch( error => dispatch(apiError(error, entity)))
   }
 };
 
