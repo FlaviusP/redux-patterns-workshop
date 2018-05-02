@@ -1,9 +1,9 @@
 export const SET_NOTIFICATION = 'SET_NOTIFICATION';
 
-export const seNotification = (notification, entity) => ({
+export const setNotification = (notification, entity) => ({
   type   : `${entity} ${SET_NOTIFICATION}`,
   payload: {
     data: notification,
-    meta: entity
-  }
+  },
+  meta: entity
 });
