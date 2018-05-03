@@ -1,12 +1,14 @@
-import {CREATE_NOTIFICATION, setNotification, removeNotification} from "../../actions/notification.actions";
-
+import {
+  removeNotification,
+  SET_NOTIFICATION,
+  setNotification
+} from "../../actions/notification.actions";
 
 export const notificationMiddleware = () => (next) => (action) => {
-  next(action);
 
-  if(action.type.includes(CREATE_NOTIFICATION)) {
-    const {data, meta} = action.payload;
-    const id = new Date().getMilliseconds();
+  if (action.type.includes(SET_NOTIFICATION)) {
+    const {data, meta} = action;
+    const id           = new Date().getMilliseconds();
 
     const notification = {
       id,
@@ -15,7 +17,9 @@ export const notificationMiddleware = () => (next) => (action) => {
 
     next(setNotification(notification, meta.entity));
 
-    setTimeout( () => next(removeNotification(id, meta.entity)), 5000)
+    setTimeout(() => next(removeNotification(id, meta.entity)), 5000)
+  } else {
+    next(action)
   }
 };
 

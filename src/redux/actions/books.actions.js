@@ -5,15 +5,11 @@ export const SET_BOOKS   = `${BOOKS} Set`;
 
 export const fetchBooks = (query) => ({
     type: FETCH_BOOKS,
-    payload: {
-      data: query
-    }
+    payload: query,
 });
 
-export const setBooks = (books, normalizeId) => ({
+export const setBooks = (books, normalizeKey) => ({
   type: SET_BOOKS,
-  payload: {
-    data: books,
-    meta: { normalizeId, entity: BOOKS }
-  }
+  payload: books,
+  meta: { normalizeKey, entity: BOOKS }
 });

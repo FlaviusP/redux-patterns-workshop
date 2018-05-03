@@ -4,6 +4,7 @@ import {rootReducer} from "./reducers";
 
 import {coreMiddleware} from "./middleware/core";
 import {appMiddleware} from "./middleware/app";
+import {multiMiddleware} from "./middleware/core/multi.middleware";
 
 // compose store enhancers
 const enhancer = compose(
