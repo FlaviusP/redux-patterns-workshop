@@ -2,8 +2,8 @@ import {combineReducers} from 'redux';
 import {booksReducer} from "./books.reducer";
 import {uiReducer} from "./ui.reducer";
 import {notificationsReducer} from "./notifications.reducer";
-import {stateFreezer} from '../meta-reducers/stateFreezer.reducer';
-import {undoable} from '../meta-reducers/undoable.reducer';
+import {stateFreezer} from '../meta/stateFreezer.reducer';
+import {undoable} from '../meta/undoable.reducer';
 
 const reducers = combineReducers({
   books: undoable(booksReducer),

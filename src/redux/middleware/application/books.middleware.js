@@ -1,7 +1,7 @@
 import {FETCH_BOOKS, setBooks} from "../../actions/books.actions";
 import {API_ERROR, API_SUCCESS, apiRequest} from "../../actions/api.actions";
 import {setLoader} from "../../actions/ui.actions";
-import {API} from '../../constants/urls';
+import {API} from '../../constants';
 import {setNotification} from "../../actions/notification.actions";
 import {BOOKS} from '../../constants/entities';
 

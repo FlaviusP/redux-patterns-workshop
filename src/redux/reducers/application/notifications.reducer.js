@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import {SET_NOTIFICATION, REMOVE_NOTIFICATION} from "../actions/notification.actions";
+import {SET_NOTIFICATION, REMOVE_NOTIFICATION} from "../../actions/notification.actions";
 
 export const notificationsReducer = (notifications = {}, action) => {
   const {type} =action;

@@ -1,4 +1,4 @@
-import {SET_LOADER} from "../actions/ui.actions";
+import {SET_LOADER} from "../../actions/ui.actions";
 
 const initState = {
   loading: false

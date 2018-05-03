@@ -1,4 +1,4 @@
-import {SET_BOOKS} from "../actions/books.actions";
+import {SET_BOOKS} from "../../actions/books.actions";
 
 export const booksReducer = (books = [], action) => {
   const { payload } = action;
