@@ -1,19 +1,14 @@
-import * as R from 'ramda';
 import {SET_LOADER} from "../actions/ui.actions";
 
 const initState = {
-  loader: false
+  loading: false
 };
 
-const loader = R.lensProp('loader');
-
 export const uiReducer = (ui =initState, action) => {
-  const { type, payload } = action;
-
   switch (true) {
 
-    case type.includes(SET_LOADER):    
-      return R.set(loader, payload.data, ui);
+    case action.type.includes(SET_LOADER):
+      return {...ui, loading: action.payload };
 
     default:
       return ui;

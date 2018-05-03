@@ -6,12 +6,11 @@ export const notificationsReducer = (notifications = {}, action) => {
 
   switch (true) {
     case type.includes(SET_NOTIFICATION):
-      const { payload:{ data: notification }} = action;
-
+      const { payload: notification } = action;
       return {...notifications, [notification.id]: notification };
 
     case type.includes(REMOVE_NOTIFICATION):
-      const { payload:{data: id}} = action;
+      const { payload: id} = action;
 
       return R.dissoc(id, notifications);
 

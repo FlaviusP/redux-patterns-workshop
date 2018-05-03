@@ -1,11 +1,11 @@
 import {FETCH_BOOKS, setBooks} from "../../actions/books.actions";
-import {apiRequest, API_SUCCESS, API_ERROR} from "../../actions/api.actions";
+import {API_ERROR, API_SUCCESS, apiRequest} from "../../actions/api.actions";
 import {setLoader} from "../../actions/ui.actions";
 import {API} from '../../constants/urls';
-import {createNotification} from "../../actions/notification.actions";
+import {setNotification} from "../../actions/notification.actions";
 import {BOOKS} from '../../constants/entities';
 
-export const booksMiddleware = () => (next) => (action) => {
+export const booksMiddleware = ({dispatch}) => (next) => (action) => {
   next(action);
 
   switch (action.type) {
@@ -26,7 +26,7 @@ export const booksMiddleware = () => (next) => (action) => {
 
     case `${BOOKS} ${API_ERROR}`:
       next([
-        createNotification(action.payload.data.message, BOOKS),
+        setNotification(action.payload, BOOKS),
         setLoader(false, BOOKS)
       ]);
       break;
